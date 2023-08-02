@@ -52,17 +52,19 @@ class CameraApp:
 
         # Create a button to capture image
         add_person = functools.partial(self.capture_image, add=True)
-        self.add_person_button = tk.Button(self.root,width=20, height=2, text="Add Person", bg='green', command=add_person)
+        self.add_person_button = tk.Button(self.root,width=20, height=2, text="Add Person", font=('Arial', 12), bg='lightblue', fg='black', bd=0, highlightthickness=0, command=add_person)
         self.add_person_button.pack()
-        self.add_person_button.place(x=window_width-470, y=window_height-770)
+        self.add_person_button.place(x=window_width-490, y=window_height-770)
 
         verify = functools.partial(self.capture_image, ver=True)
-        self.verify_button = tk.Button(self.root, width=15, height=2, text="Verify", bg='green', command=verify)
+        self.verify_button = tk.Button(self.root, width=15, height=2, text="Verify",font=('Arial', 12), bg='lightgreen', fg='black', bd=0, highlightthickness=0, command=verify)
+        self.verify_button.config(relief=tk.GROOVE)
         self.verify_button.pack()
-        self.verify_button.place(x=window_width-700, y=window_height-700)
+        self.verify_button.place(x=window_width-730, y=window_height-700)
 
         recognize = functools.partial(self.capture_image, recognize=True)
-        self.recognize_button = tk.Button(self.root, width=15, height=2, text="Recognize", bg='green',  command=recognize)
+        self.recognize_button = tk.Button(self.root, width=15, height=2, text="Recognize", font=('Arial', 12), bg='lightgreen', fg='black', bd=0, highlightthickness=0,  command=recognize)
+        self.recognize_button.config(relief=tk.GROOVE)
         self.recognize_button.pack()
         self.recognize_button.place(x=window_width-200, y=window_height-700)
         
